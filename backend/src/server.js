@@ -1,12 +1,15 @@
 const express = require('express');
+const routes = require('./routes');
+const cors = required('cors');
 const app = express();
 
 app.use(express.json());
-
+app.use(routes);
+app.use(cors());
 app.get('/', (req, res) => {
-res.send('Hello World');
+    res.send('Hello World');
 });
 
 app.listen(3000, () => {
-console.log('Listening on port 3000');
+    console.log('Listening on port 3000');
 });
